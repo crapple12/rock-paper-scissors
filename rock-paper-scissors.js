@@ -1,8 +1,9 @@
 
-console.log("Hello World!");
+
 
 const rng = ["rock", "paper", "scissors"];
-
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     const randomChoice = rng[Math.floor(Math.random() * rng.length)];
@@ -11,12 +12,35 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let que = prompt("Choose between rock, paper, or scissors!");
-    alert(`Player chose ${que}`);
+    let que = prompt("Choose between Rock, Paper, or Scissors!");
+    while (que == null) {
+        que = prompt("Choose between Rock, Paper, or Scissors!");
+    }
+    que = que.toLowerCase();
+    let confirm = validateQue(que)
+    if (confirm == true) {
+    console.log(que);
+    }
 }
-    getHumanChoice();
 
+function validateQue(choice) {
+    if (rng.includes(choice)) {
+        return true;
+    }   else {
+        return false;
+    }
+}
 
+// function playRound(humanChoice, computerChoice) {
+//     if (humanChoice.toLowercase = "rock", "paper", "scissors") {
+//         return humanChoice;
+//     }
+// }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+// playRound(humanSelection, computerSelection);
 
 
 
