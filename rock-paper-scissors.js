@@ -13,70 +13,52 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let que = prompt("Choose between Rock, Paper, or Scissors!");
-    while (que === '') {
-        que = prompt("Choose between Rock, Paper, or Scissors!");
-    }
-    que = que.toLowerCase();
-    let confirm = validateQue(que)
-    if (confirm == true) {
-    }
-    console.log(`Player chose ${que}`);
-}
-
-function validateQue(choice) {
-    if (rng.includes(choice)) {
-        return true;
-    }   else {
-        return false;
-    }
+    return prompt("Enter your choice from (Rock, Paper or Scissors)")
 }
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
+    humanChoice = humanChoice.toLowerCase();
     computerChoice = getComputerChoice();
+    console.log(`Player chose ${humanChoice}`);
     console.log(`Computer chose ${computerChoice}`);
     
-    if (humanChoice = "rock" && computerChoice == "paper") {
+    if (humanChoice == "rock" && computerChoice == "paper") {
         let winner = "Computer";
         return (`The winner is ${winner}`);
     } 
-    else if(humanChoice = "rock" && computerChoice == "scissors") {
+    else if(humanChoice == "rock" && computerChoice == "scissors") {
         let winner = "Player";
         return (`The winner is ${winner}`);
     }   
-    else if(humanChoice = "rock" && computerChoice == "rock") {
-        let winner = "no one"
+    else if(humanChoice == "rock" && computerChoice == "rock") {
+        let winner = "no one";
         return (`The winner is ${winner}`);
     }
 
-    if (humanChoice = "paper" && computerChoice == "scissors") {
+    else if (humanChoice == "paper" && computerChoice == "scissors") {
         let winner = "Computer";
         return (`The winner is ${winner}`); 
     }   
-    else if(humanChoice = "paper" && computerChoice == "rock") {
+    else if(humanChoice == "paper" && computerChoice == "rock") {
         let winner = "Player";
         return (`The winner is ${winner}`);
     }   
-    else if(humanChoice = "paper" && computerChoice == "paper") {
-        let winner = "no one"
+    else if(humanChoice == "paper" && computerChoice == "paper") {
+        let winner = "no one";
         return (`The winner is ${winner}`);
     }
 
-    if (humanChoice = "scissors" && computerChoice == "rock") {
+    else if (humanChoice == "scissors" && computerChoice == "rock") {
         let winner = "Computer";
         return (`The winner is ${winner}`);  
     }   
-    else if(humanChoice = "scissors" && computerChoice == "paper") {
+    else if(humanChoice == "scissors" && computerChoice == "paper") {
         let winner = "Player";
         return (`The winner is ${winner}`);
     }   
-    else if(humanChoice = "scissors" && computerChoice == "scissors") {
-        let winner = "no one"
+    else if(humanChoice == "scissors" && computerChoice == "scissors") {
+        let winner = "no one";
         return (`The winner is ${winner}`);
     }
 }
-
-
-
-
